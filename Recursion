@@ -1,0 +1,44 @@
+function factorial(x) 
+{ 
+
+  if (x === 0)
+ {
+    return 1;
+ }
+  return x * factorial(x-1);
+       
+}
+console.log(factorial(5));
+//
+function fibonacci(n) {
+   if (n < 2){
+     return 1;
+   }else{
+     return fibonacci(n-2) + fibonacci(n-1);
+   }
+}
+//Returns 21
+//
+function flatten(items) {
+  const flat = [];
+
+  items.forEach(item => {
+    if (Array.isArray(item)) {
+      flat.push(...flatten(item));
+    } else {
+      flat.push(item);
+    }
+  });
+
+  return flat;
+}
+//
+function collatz(n){
+    if (n == 1)
+        return 0;
+    else if ( n % 2 == 0)
+        return 1 + collatz(n / 2);
+    else
+        return 1 + collatz(3 * n + 1);
+}
+//
